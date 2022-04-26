@@ -27,19 +27,19 @@ addbutton.addEventListener('click', function (){
 })
 
 delbutton.addEventListener('click', function (){
-    content_list.pop()
     let html_content = ""
-    content_list.forEach(function (item) {
+    content_list.pop()
+    for (let i = 0; i < content_list.length; i++){
         html_content = html_content + `
-        <div class="item">
+       <div class="item">
             <div>
-                <p>Date: ${item.date} </p>
-                <p>Content: ${item.content}</p>
+                <p>Date: ${content_list[i].date} </p>
+                <p>Content: ${content_list[i].content}</p>
                 <br>
             </div>
-        </div> 
-        `
-    })
+        </div>  
+       `
+    }
     list.innerHTML = html_content
 })
 
